@@ -442,7 +442,7 @@ button,input,select{font-family:inherit}
 
 
       <section id="food-planner" class="panel app-data-panel">
-        <div class="panel-head simple"><div class="panel-icon">🍱</div><div><h2>Food Planner</h2><p>Kebutuhan FR berdasarkan hari yang sama pada minggu sebelumnya.</p></div></div>
+        <div class="panel-head simple"><div class="panel-icon">🍱</div><div><h2>Food Planner</h2><p>FR malam ini untuk kebutuhan besok, berdasarkan hari yang sama minggu sebelumnya.</p></div></div>
         <div class="data-toolbar"><div><strong id="foodPlannerDateLabel">Tanggal proses: -</strong><p id="foodPlannerSourceLabel" style="font-size:10px;color:#718298;margin:4px 0 0">Sumber FR: -</p></div><button class="show-btn" type="button" onclick="loadFoodPlannerWeb()">MUAT ULANG</button></div>
         <div id="foodPlannerMessage" class="web-empty">Food Planner akan tersedia setelah Proses Akhir Hari berhasil.</div>
         <div class="web-table-wrap" id="foodPlannerTable" style="display:none"></div>
@@ -2421,12 +2421,12 @@ function loadFoodPlannerWeb(){
     r=r||{};
     if(navLink)navLink.style.display=r.unlocked?'flex':'none';
     if(!r.success){if(msg)msg.textContent=r.message||'Food Planner belum tersedia.';return;}
-    const d=document.getElementById('foodPlannerDateLabel'); if(d)d.textContent='Tanggal proses: '+(r.tanggal||'-');
-    const s=document.getElementById('foodPlannerSourceLabel'); if(s)s.textContent='Sumber FR hari yang sama minggu sebelumnya: '+(r.sourceDate||'-');
+    const d=document.getElementById('foodPlannerDateLabel'); if(d)d.textContent='Tanggal kebutuhan besok: '+(r.tanggal||'-')+' | FR dibuat: '+(r.tanggalFR||'-');
+    const s=document.getElementById('foodPlannerSourceLabel'); if(s)s.textContent='Data pembanding (hari sama minggu sebelumnya): '+(r.sourceDate||'-');
     if(msg){msg.textContent=r.message||'';msg.style.display=r.rows&&r.rows.length?'none':'block';}
     if(!box)return; const rows=r.rows||[]; if(!rows.length){box.style.display='none';return;}
-    let h='<table class="web-table"><thead><tr><th>KODE</th><th>NAMA ITEM</th><th>MASBAR</th><th>SATUAN</th><th>IDEAL FR</th><th>OH FISIK</th><th>RECOMMENDED ORDER</th></tr></thead><tbody>';
-    rows.forEach(function(x){h+='<tr><td>'+escapeHtml(x.kode)+'</td><td>'+escapeHtml(x.nama)+'</td><td>'+escapeHtml(x.masbar)+'</td><td>'+escapeHtml(x.satuan)+'</td><td class="num">'+formatNumber(x.ideal)+'</td><td class="num">'+formatNumber(x.ohFisik)+'</td><td class="num">'+formatNumber(x.recommendedOrder)+'</td></tr>';});
+    let h='<table class="web-table"><thead><tr><th>KODE</th><th>NAMA ITEM</th><th>MASBAR / KODE DASAR</th><th>SATUAN</th><th>RATA KIRIM</th><th>RATA SALES</th><th>IDEAL</th><th>AKHIR HARI INI</th><th>OH FISIK HARI INI</th><th>TOTAL STOK</th><th>REKOMENDASI FR BESOK</th></tr></thead><tbody>';
+    rows.forEach(function(x){h+='<tr><td>'+escapeHtml(x.kode)+'</td><td>'+escapeHtml(x.nama)+'</td><td>'+escapeHtml(x.masbar)+'</td><td>'+escapeHtml(x.satuan)+'</td><td class="num">'+formatNumber(x.rataKirim)+'</td><td class="num">'+formatNumber(x.rataSales)+'</td><td class="num"><b>'+formatNumber(x.ideal)+'</b></td><td class="num">'+formatNumber(x.akhir)+'</td><td class="num">'+formatNumber(x.ohFisik)+'</td><td class="num">'+formatNumber(x.totalStock)+'</td><td class="num"><b>'+formatNumber(x.recommendedOrder)+'</b></td></tr>';});
     h+='</tbody></table>';box.innerHTML=h;box.style.display='block';
   }).withFailureHandler(function(e){if(msg)msg.textContent='Gagal memuat Food Planner: '+escapeHtml(getErrorMessage(e));}).getFoodPlannerWeb({});
 }
