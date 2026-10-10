@@ -1,1 +1,2341 @@
+<!DOCTYPE html>
+<html>
+<head>
 
+  <base target="_top">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+
+  <title>Stock Menteng — Stock Control</title>
+  <link rel="icon" type="image/png" href="data:image/png;base64,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">
+  <link rel="apple-touch-icon" href="data:image/png;base64,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">
+
+
+  
+
+
+<style id="enterprise-mockup-theme">
+:root{--navy:#0d2946;--blue:#1375e8;--blue2:#1e5b94;--text:#132b4a;--muted:#6b7a8c;--bg:#f4f7fb;--line:#dfe7f0;--green:#0b9b55;--red:#e52c35;--gold:#f5b82e}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}body{min-height:100vh;overflow-x:hidden}
+button,input,select{font-family:inherit}
+.app-shell{display:flex;min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:205px;background:linear-gradient(180deg,#0b2745,#071d34);color:#dbe8f5;display:flex;flex-direction:column;padding:22px 12px;z-index:50}
+.sidebar-brand{display:flex;align-items:center;gap:10px;padding:0 8px 28px}.brand-mark{width:38px;height:38px;border-radius:11px;background:#173e64;color:#f7c64a;display:grid;place-items:center;font-weight:900}.brand-name{font-size:11px;font-weight:800;letter-spacing:.04em}.brand-sub{font-size:8px;color:#90a6bc;margin-top:3px}
+.side-nav{display:flex;flex-direction:column;gap:5px}.nav-item{display:flex;align-items:center;gap:12px;padding:11px 10px;border-radius:8px;color:#c5d3e2;text-decoration:none;font-size:13px}.nav-item:hover,.nav-item.active{background:#1678df;color:white}.nav-icon{width:20px;text-align:center;font-size:17px}.sidebar-user{margin-top:auto;display:flex;gap:10px;align-items:center;border-top:1px solid rgba(255,255,255,.1);padding:16px 6px 8px}.avatar{width:34px;height:34px;border-radius:50%;background:#2878d8;color:#fff;display:grid;place-items:center;font-weight:800}.sidebar-user strong{display:block;font-size:11px}.sidebar-user small{font-size:9px;color:#91a8be}.sidebar-status{font-size:9px;color:#49cf8a;padding:7px}
+.workspace{margin-left:205px;min-width:0;flex:1}.enterprise-header{height:86px;background:#fff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:15px 28px;gap:20px}.header-left .eyebrow{font-size:10px;color:#7b8a9c;text-transform:uppercase;letter-spacing:.08em}.header-left h1{margin:2px 0 0;font-size:24px;line-height:1.1;color:#102d4e}.header-left p{margin:3px 0 0;font-size:11px;color:#748398}.header-right{display:flex;align-items:center;gap:12px}.header-chip,.group-chip{display:flex;align-items:center;gap:9px;background:#f7faff;border:1px solid #e4ebf4;border-radius:10px;padding:9px 12px}.header-chip strong,.group-chip strong{display:block;font-size:11px}.header-chip small,.group-chip small{display:block;font-size:9px;color:#8190a2;margin-top:2px}.chip-icon,.group-icon{font-size:17px}.notification{width:34px;height:34px;border:1px solid #e4ebf4;border-radius:10px;display:grid;place-items:center;color:#e52c35;font-size:11px}
+.main{max-width:1250px;margin:auto;padding:18px 22px 34px}.dashboard-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:15px}.metric-card{background:#fff;border:1px solid var(--line);border-radius:11px;box-shadow:0 2px 8px rgba(22,50,80,.04);padding:15px;display:flex;align-items:center;gap:12px}.metric-icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;font-size:22px;font-weight:900}.metric-card span{display:block;font-size:10px;color:#63758b;text-transform:uppercase}.metric-card strong{display:block;font-size:26px;line-height:1.1;margin:4px 0}.metric-card small{font-size:9px;color:#8a98a8}.metric-total .metric-icon{background:#e8f2ff;color:#1477e8}.metric-minus{background:#fff7f7}.metric-minus .metric-icon{background:#ffe2e4;color:#e52c35}.metric-minus strong{color:#b51e28}.metric-plus{background:#f6fffa}.metric-plus .metric-icon{background:#dff8ea;color:#079b54}.metric-plus strong{color:#087d47}.metric-net .metric-icon{background:#fff4d7;color:#d58c00}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:15px;padding:17px;box-shadow:0 2px 9px rgba(22,50,80,.045)}.panel-head{display:flex;align-items:center;gap:12px;margin-bottom:15px}.panel-head.simple{margin-bottom:17px}.panel-icon{width:40px;height:40px;border-radius:10px;background:#e5f0ff;color:#1477e8;display:grid;place-items:center;font-size:21px;font-weight:800}.panel-head h2{margin:0;font-size:18px;color:#102d4e}.panel-head p{margin:3px 0 0;font-size:10px;color:#7b899a}.master-date-box{margin-left:auto;display:flex;align-items:center;gap:9px;background:#eef6ff;border:1px solid #dbeaff;border-radius:9px;padding:9px 12px;min-width:260px}.master-date-box>span{font-size:18px;color:#1c75d1}.master-date-box small{display:block;font-size:8px;font-weight:800;color:#6c7f95}.master-date-box strong{display:block;font-size:14px;color:#183b62;margin-top:2px}
+.process-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.process-btn{border:0;border-radius:9px;color:#fff;display:flex;align-items:center;gap:12px;padding:13px 15px;text-align:left;cursor:pointer;min-height:66px}.process-isp{background:#079951}.process-eod{background:#18558b}.process-btn-icon{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.13);display:grid;place-items:center;font-size:16px}.process-btn strong{display:block;font-size:13px}.process-btn small{display:block;font-size:9px;opacity:.8;margin-top:4px}.process-btn b{margin-left:auto;font-size:24px;font-weight:400}
+.filter-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.25fr;gap:10px;align-items:end}.field{min-width:0}.field label{display:block;font-size:10px;font-weight:800;color:#566b82;margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}.field input,.field select{width:100%;height:40px;border:1px solid #d2dce7;border-radius:7px;padding:8px 10px;background:#fff;color:#263b53;font-size:12px;outline:none}.field input:focus,.field select:focus{border-color:#247ad8;box-shadow:0 0 0 3px rgba(36,122,216,.1)}.enterprise-filters{position:relative}.show-btn{height:40px;border:0;border-radius:7px;background:#1478e8;color:#fff;font-weight:800;font-size:11px;padding:0 20px;cursor:pointer;grid-column:5;grid-row:1}.enterprise-filters .search-field{grid-column:4}.reset-top{margin-left:auto;border:0;background:#eef3f8;color:#36536e;border-radius:7px;padding:9px 13px;font-weight:700;font-size:10px;cursor:pointer}.export-title{font-size:10px;font-weight:800;color:#40566d;text-transform:uppercase;margin:14px 0 7px}.export-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.export-btn{border:0;border-radius:7px;height:42px;color:#fff;font-weight:800;font-size:10px;cursor:pointer}.export-btn.red{background:#e52c35}.export-btn.green{background:#099d55}.result-count{font-size:10px;color:#8492a2;margin:10px 0 2px}.history-list{display:flex;flex-direction:column}.history-item{border:0!important;border-bottom:1px solid #e5ebf1!important;border-radius:0!important;box-shadow:none!important;padding:12px!important;background:#fff!important}.history-item:nth-child(even){background:#f8fafc!important}.history-item:hover{background:#eef5fb!important}
+.edit-filters{grid-template-columns:1fr 3fr}.edit-filters .search-field{grid-column:auto}.item-count{font-size:9px;color:#78899b;margin-top:5px}.detail-card{margin-top:13px;background:#f8fafc;border:1px solid #e1e8f0;border-radius:9px;padding:12px}.detail-heading h3{margin:0;font-size:15px;color:#14375c}.detail-heading p{margin:3px 0 10px;font-size:9px;color:#7c8b9b}.detail-table{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid #dce5ee;border-radius:7px;overflow:hidden;background:#fff}.detail-cell{padding:10px;border-right:1px solid #e3eaf1}.detail-cell:last-child{border-right:0}.detail-cell span{display:block;font-size:8px;text-transform:uppercase;color:#7a8999;font-weight:800}.detail-cell strong{display:block;font-size:12px;margin-top:5px;color:#1b3653;word-break:break-word}.edit-action-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;margin-top:11px}.save-oh-btn{height:40px;padding:0 20px;border:0;border-radius:7px;background:#1478e8;color:#fff;font-weight:800;font-size:11px;cursor:pointer}
+.enterprise-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding:15px 4px;color:#62758b;font-size:10px}.enterprise-footer strong{color:#183b62}.enterprise-footer span{margin:0 7px}.enterprise-footer small{display:block;margin-top:4px}.enterprise-footer>div:last-child strong{display:block;color:#0b9b55;margin-top:4px}
+.loading-overlay{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;background:rgba(7,29,52,.42);backdrop-filter:blur(2px)}.loading-box{background:#fff;border-radius:12px;padding:20px 25px;text-align:center;box-shadow:0 15px 45px rgba(0,0,0,.2)}.spinner{width:34px;height:34px;margin:0 auto 10px;border:4px solid #e3eaf2;border-top-color:#1478e8;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);z-index:10000;max-width:calc(100% - 30px);padding:11px 15px;border-radius:8px;background:#10263f;color:#fff;font-size:11px;box-shadow:0 8px 28px rgba(0,0,0,.18);transition:.25s;text-align:center}.toast.show{transform:translate(-50%,0)}
+@media(max-width:1000px){.sidebar{width:68px;padding:18px 8px}.workspace{margin-left:68px}.sidebar-brand .brand-name,.sidebar-brand .brand-sub,.nav-item span:not(.nav-icon),.sidebar-user>div:not(.avatar),.sidebar-status{display:none}.sidebar-brand{justify-content:center}.nav-item{justify-content:center}.dashboard-grid{grid-template-columns:repeat(2,1fr)}.header-right .group-chip{display:none}.filter-grid{grid-template-columns:repeat(2,1fr)}.show-btn{grid-column:auto;grid-row:auto}.enterprise-filters .search-field{grid-column:auto}.export-grid{grid-template-columns:repeat(2,1fr)}.detail-table{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:650px){.sidebar{position:fixed;bottom:0;top:auto;left:0;width:100%;height:58px;display:flex;flex-direction:row;padding:5px;justify-content:space-around}.sidebar-brand,.sidebar-user,.sidebar-status{display:none}.side-nav{width:100%;display:flex;flex-direction:row;justify-content:space-around;gap:2px}.nav-item{flex:1;justify-content:center;padding:6px 2px;font-size:8px;border-radius:7px}.nav-item span:not(.nav-icon){display:none}.nav-icon{font-size:17px}.workspace{margin-left:0;padding-bottom:55px}.enterprise-header{height:auto;padding:12px 10px}.header-right{display:none}.header-left h1{font-size:19px}.header-left p{font-size:9px}.main{padding:9px 7px 18px}.dashboard-grid{gap:7px;margin-bottom:9px}.metric-card{padding:9px;gap:7px}.metric-icon{width:32px;height:32px;border-radius:9px;font-size:16px}.metric-card strong{font-size:19px}.metric-card span{font-size:8px}.metric-card small{font-size:7px}.panel{padding:11px;margin-bottom:9px;border-radius:9px}.panel-head{gap:8px;margin-bottom:10px}.panel-icon{width:32px;height:32px;font-size:16px}.panel-head h2{font-size:15px}.panel-head p{font-size:8px}.master-date-box{min-width:0;padding:7px;margin-left:auto}.master-date-box strong{font-size:11px}.master-date-box small{font-size:7px}.process-actions{grid-template-columns:1fr;gap:7px}.process-btn{min-height:55px;padding:10px}.filter-grid,.edit-filters{grid-template-columns:1fr 1fr;gap:7px}.edit-filters{grid-template-columns:1fr}.edit-filters .search-field{grid-column:auto}.field input,.field select{height:38px;font-size:11px}.export-grid{gap:6px}.export-btn{height:38px;font-size:8px}.history-item{padding:9px!important}.detail-table{grid-template-columns:repeat(2,1fr)}.edit-action-row{grid-template-columns:1fr}.enterprise-footer{font-size:8px}.reset-top{font-size:8px;padding:7px}.sidebar .nav-item:nth-child(n+5){display:none}}
+</style>
+
+
+<style id="stock-v514-history-matrix">
+/* ================= HISTORY MATRIX ================= */
+
+.history-list{
+  width:100%!important;
+  margin-top:8px!important;
+}
+
+.history-matrix-wrap{
+  width:100%;
+  overflow-x:auto;
+  border:1px solid #dbe3ea;
+  border-radius:9px;
+  background:#fff;
+}
+
+.history-matrix{
+  width:100%;
+  min-width:980px;
+  border-collapse:separate;
+  border-spacing:0;
+  table-layout:auto;
+  font-size:12px;
+}
+
+.history-matrix thead th{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:#163a5f!important;
+  color:#fff!important;
+  padding:11px 10px!important;
+  text-align:left;
+  white-space:nowrap;
+  font-size:10px!important;
+  font-weight:800!important;
+  letter-spacing:.05em;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+
+.history-matrix thead th:nth-child(4),
+.history-matrix thead th:nth-child(5),
+.history-matrix thead th:nth-child(6){
+  text-align:right;
+}
+
+.history-row{
+  background:#fff;
+}
+
+.history-row:nth-child(even){
+  background:#f7f9fb;
+}
+
+.history-row:hover{
+  background:#edf4fa;
+}
+
+.history-row td{
+  padding:10px!important;
+  border-bottom:1px solid #e5e9ee;
+  color:#273444;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+
+.history-row:last-child td{
+  border-bottom:0;
+}
+
+.col-item{
+  min-width:220px;
+  white-space:normal!important;
+}
+
+.item-main{
+  font-weight:750;
+  color:#172b3d;
+  line-height:1.25;
+}
+
+.item-code{
+  margin-top:3px;
+  color:#7a8794;
+  font-size:10px;
+}
+
+.process-pill{
+  display:inline-flex;
+  align-items:center;
+  min-height:23px;
+  padding:4px 8px;
+  border-radius:5px;
+  background:#edf3f9;
+  color:#244c70;
+  font-size:9px;
+  font-weight:800;
+}
+
+.date-cell{
+  color:#4b5967;
+  font-weight:600;
+}
+
+.number-cell{
+  min-width:92px;
+  text-align:right!important;
+  font-variant-numeric:tabular-nums;
+}
+
+.minus-value{
+  color:#dc2626!important;
+}
+
+.plus-value{
+  color:#059669!important;
+}
+
+.normal-value{
+  color:#4b5563!important;
+}
+
+.unit-text{
+  color:#526170;
+  font-weight:600;
+}
+
+.action-cell{
+  width:115px;
+  text-align:center!important;
+}
+
+.history-edit-btn{
+  min-height:30px!important;
+  padding:6px 10px!important;
+  border:1px solid #1f557f!important;
+  border-radius:6px!important;
+  background:#1f557f!important;
+  color:#fff!important;
+  font-size:9px!important;
+  font-weight:800!important;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.history-edit-btn:hover{
+  background:#163a5f!important;
+  filter:none!important;
+}
+
+.history-empty{
+  padding:35px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  color:#64748b;
+  background:#fff;
+}
+
+.history-empty strong{
+  color:#334155;
+  font-size:14px;
+}
+
+.history-empty span{
+  font-size:11px;
+}
+
+@media(max-width:700px){
+  .history-matrix{
+    min-width:900px;
+  }
+
+  .history-matrix thead th{
+    padding:9px 8px!important;
+  }
+
+  .history-row td{
+    padding:8px!important;
+  }
+
+  .col-item{
+    min-width:190px;
+  }
+}
+</style>
+
+
+<style id="stock-menteng-v520">
+.stock-logo{padding:0!important;background:transparent!important;width:40px;height:40px}.stock-logo svg{width:40px;height:40px;display:block}.install-mini-btn{margin-top:7px;border:1px solid #d9e6f4;background:#eef6ff;color:#155a8d;border-radius:7px;padding:6px 9px;font-size:9px;font-weight:800;cursor:pointer}.install-mini-btn:hover{background:#e2f0ff}.app-data-panel{scroll-margin-top:12px}.data-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:8px 0}.data-toolbar input{flex:1;height:38px;border:1px solid #d2dce7;border-radius:7px;padding:8px 10px;font-size:11px}.data-toolbar span{font-size:10px;color:#718298;font-weight:700}.web-table-wrap{width:100%;overflow:auto;border:1px solid #dbe3ea;border-radius:9px;background:#fff;max-height:480px}.web-table{width:100%;min-width:720px;border-collapse:collapse;font-size:11px}.web-table th{position:sticky;top:0;background:#163a5f;color:#fff;padding:10px;text-align:left;font-size:9px;z-index:2}.web-table td{padding:9px 10px;border-bottom:1px solid #e8edf2;white-space:nowrap}.web-table tr:nth-child(even){background:#f8fafc}.web-table .num{text-align:right}.web-empty{padding:35px;text-align:center;color:#7b8a9a;font-size:11px}.database-filters{grid-template-columns:1fr 1fr 1fr 1.4fr}.database-filters .show-btn{grid-column:auto}.report-filter{display:grid;grid-template-columns:1fr 1fr 1.4fr auto;gap:10px;align-items:end}.report-filter .show-btn{grid-column:auto}.report-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.report-cards>div{border:1px solid #e0e8f0;border-radius:9px;padding:13px;background:#f8fbff}.report-cards span{display:block;font-size:9px;text-transform:uppercase;color:#718298;font-weight:800}.report-cards strong{display:block;font-size:22px;margin-top:5px;color:#153d62}.settings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.setting-card{border:1px solid #e0e8f0;border-radius:9px;padding:14px;background:#f8fbff}.setting-card span{font-size:8px;color:#718298;font-weight:800}.setting-card strong{display:block;margin-top:5px;font-size:15px;color:#163a5f}.setting-card small{display:block;margin-top:4px;font-size:9px;color:#8090a1}.mobile-install-card{margin-top:12px;border:1px solid #cfe2f7;background:#eef7ff;border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:15px}.mobile-install-card strong{font-size:13px;color:#163a5f}.mobile-install-card p{margin:4px 0 0;font-size:10px;color:#6d7f93}.mobile-install-card .show-btn{height:40px;white-space:nowrap;border:0;border-radius:7px;background:#1478e8;color:#fff;font-weight:800;padding:0 15px}.install-guide{position:fixed;inset:0;background:rgba(7,29,52,.5);z-index:11000;display:flex;align-items:center;justify-content:center;padding:18px}.install-guide-card{width:min(460px,100%);background:#fff;border-radius:14px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.25)}.install-guide-card h3{margin:0;color:#153d62}.install-guide-card p,.install-guide-card li{font-size:11px;line-height:1.55;color:#596b7f}.install-guide-card button{border:0;border-radius:7px;background:#1478e8;color:#fff;padding:9px 14px;font-weight:800;font-size:11px;cursor:pointer}.nav-item{cursor:pointer}.nav-item.active{box-shadow:0 2px 7px rgba(0,0,0,.08)}
+@media(max-width:650px){.enterprise-header{position:relative}.install-mini-btn{font-size:8px;padding:5px 7px}.side-nav{overflow-x:auto;overflow-y:hidden;justify-content:flex-start}.nav-item{min-width:76px;flex:0 0 76px}.sidebar .nav-item:nth-child(n+5){display:flex}.report-filter,.database-filters,.settings-grid{grid-template-columns:1fr}.report-cards{grid-template-columns:repeat(2,1fr)}.mobile-install-card{flex-direction:column;align-items:stretch}.mobile-install-card .show-btn{width:100%}.web-table{min-width:720px}}
+</style>
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark stock-logo" aria-label="Stock Menteng logo">
+        <svg viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect x="3" y="3" width="58" height="58" rx="16" fill="#0f4778"/>
+          <path d="M18 40V24h8l6 8 6-8h8v16h-7v-7l-7 9-7-9v7z" fill="#f7c64a"/>
+          <circle cx="49" cy="17" r="4" fill="#2aa6ff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">STOCK MENTENG</div>
+        <div class="brand-sub">Inventory Control System</div>
+      </div>
+    </div>
+
+    <nav class="side-nav" id="sideNav">
+      <a class="nav-item active" href="#dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span></a>
+      <a class="nav-item" href="#process"><span class="nav-icon">▣</span><span>Proses Data</span></a>
+      <a class="nav-item" href="#history"><span class="nav-icon">◷</span><span>History Stock</span></a>
+      <a class="nav-item" href="#edit-oh"><span class="nav-icon">✎</span><span>Edit OH Fisik</span></a>
+      <a class="nav-item" href="#master-data"><span class="nav-icon">▤</span><span>Master Data</span></a>
+      <a class="nav-item" href="#database"><span class="nav-icon">▥</span><span>Database</span></a>
+      <a class="nav-item" href="#laporan"><span class="nav-icon">▧</span><span>Laporan</span></a>
+      <a class="nav-item" href="#food-planner" onclick="loadFoodPlannerWeb()"><span class="nav-icon">🍱</span><span>Food Planner</span></a>
+      <a class="nav-item" href="#pengaturan"><span class="nav-icon">⚙</span><span>Pengaturan</span></a>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="avatar">R</div>
+      <div>
+        <strong>Administrator</strong>
+        <small>Stock Control</small>
+      </div>
+    </div>
+    <div class="sidebar-status">● All Systems Operational</div>
+  </aside>
+
+  <div class="workspace">
+    <header class="enterprise-header">
+      <div class="header-left">
+        <div class="eyebrow">Inventory Monitoring System</div>
+        <h1>Stock Control V5</h1>
+        <p>Inventory today, better tomorrow</p><button class="install-mini-btn" type="button" onclick="showInstallGuide()">＋ PASANG DI HP</button>
+      </div>
+      <div class="header-right">
+        <div class="header-chip">
+          <span class="chip-icon">▣</span>
+          <div><strong id="headerDate">Saturday, 19 September 2026</strong><small>Stock Control System</small></div>
+        </div>
+        <div class="notification">●</div>
+        <div class="group-chip"><span class="group-icon">▣</span><div><strong>Sari Rasa Group</strong><small>Always Better Together</small></div></div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <section id="dashboard" class="dashboard-grid">
+        <div class="metric-card metric-total">
+          <div class="metric-icon">▣</div>
+          <div><span>Total History</span><strong id="totalHistory">0</strong><small>Item di Database</small></div>
+        </div>
+        <div class="metric-card metric-minus">
+          <div class="metric-icon">↓</div>
+          <div><span>Minus</span><strong id="totalMinus">0</strong><small>Item stock minus</small></div>
+        </div>
+        <div class="metric-card metric-plus">
+          <div class="metric-icon">↑</div>
+          <div><span>Plus</span><strong id="totalPlus">0</strong><small>Item stock plus</small></div>
+        </div>
+        <div class="metric-card metric-net">
+          <div class="metric-icon">◇</div>
+          <div><span>Net</span><strong id="totalNet">0</strong><small>Selisih total</small></div>
+        </div>
+      </section>
+
+      <section id="process" class="panel process-panel">
+        <div class="panel-head">
+          <div class="panel-icon">☰</div>
+          <div><h2>Proses Data</h2><p>Kelola proses ISP dan Akhir Hari</p></div>
+          <div class="master-date-box"><span>▣</span><div><small>TANGGAL MASTER DATA</small><strong id="masterProcessDate">Memuat...</strong></div></div>
+        </div>
+        <div class="process-actions">
+          <button class="process-btn process-isp" onclick="prosesISP()"><span class="process-btn-icon">▶</span><div><strong>PROSES ISP</strong><small>Ambil data dari sistem & simpan ke database</small></div><b>›</b></button>
+          <button class="process-btn process-eod" onclick="prosesAkhirHari()"><span class="process-btn-icon">✓</span><div><strong>PROSES AKHIR HARI</strong><small>Simpan saldo akhir ke database</small></div><b>›</b></button>
+        </div>
+      </section>
+
+      <section id="history" class="panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">◷</div>
+          <div><h2>History Stock</h2><p>Lihat riwayat perubahan stock</p></div>
+          <button class="reset-top" onclick="resetFilter()">↻ Reset Filter</button>
+        </div>
+
+        <div class="filter-grid enterprise-filters">
+          <div class="field"><label>From Date</label><input type="date" id="filterFrom"></div>
+          <div class="field"><label>To Date</label><input type="date" id="filterTo"></div>
+          <div class="field"><label>Type</label><select id="filterType"><option value="SEMUA">SEMUA</option><option value="MINUS">MINUS</option><option value="PLUS">PLUS</option></select></div>
+          <div class="field search-field"><label>Cari Item</label><input type="text" id="filterSearch" placeholder="Kode / nama item"></div>
+          <button class="show-btn" onclick="loadHistory()">Tampilkan</button>
+        </div>
+
+        <div class="export-title">Export Data AKHIR HARI</div>
+        <div class="export-grid">
+          <button class="export-btn red" onclick="exportData('MINUS','PDF')">▧ &nbsp; MINUS - PDF</button>
+          <button class="export-btn green" onclick="exportData('MINUS','XLSX')">▤ &nbsp; MINUS - EXCEL</button>
+          <button class="export-btn red" onclick="exportData('PLUS','PDF')">▧ &nbsp; PLUS - PDF</button>
+          <button class="export-btn green" onclick="exportData('PLUS','XLSX')">▤ &nbsp; PLUS - EXCEL</button>
+        </div>
+
+        <div id="historyResultCount" class="result-count">Belum ditampilkan</div>
+        <div class="history-list" id="historyList"></div>
+      </section>
+
+      <section id="edit-oh" class="panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">✎</div>
+          <div><h2>Edit Stock OH Fisik</h2><p>Ubah data OH fisik berdasarkan tanggal</p></div>
+        </div>
+
+        <div class="filter-grid edit-filters">
+          <div class="field"><label>Tanggal</label><input type="date" id="editDate" onchange="loadEditItemsByDate(true)"></div>
+          <div class="field search-field"><label>Cari Item</label><input type="text" id="itemSearch" placeholder="Ketik kode atau nama item..." oninput="filterItems()"></div>
+        </div>
+
+        <div class="field">
+          <label>Pilih Item</label>
+          <select id="itemSelect" onchange="selectItem()"><option value="">-- Pilih Item --</option></select>
+          <div id="editItemCount" class="item-count">0 item tersedia</div>
+        </div>
+
+        <div id="itemDetail" class="detail-card" style="display:none;">
+          <div class="detail-heading"><div><h3>Hasil Pencarian / Detail Item</h3><p>Data berdasarkan tanggal yang dipilih</p></div></div>
+          <div class="detail-table">
+            <div class="detail-cell"><span>Kode</span><strong id="detailKode">-</strong></div>
+            <div class="detail-cell"><span>Nama Barang</span><strong id="detailNama">-</strong></div>
+            <div class="detail-cell"><span>Satuan</span><strong id="detailSatuan">-</strong></div>
+            <div class="detail-cell"><span>Saldo Akhir</span><strong id="detailSaldo">-</strong></div>
+            <div class="detail-cell"><span>OH Fisik</span><strong id="detailOH">-</strong></div>
+            <div class="detail-cell"><span>Selisih</span><strong id="detailSelisih">-</strong></div>
+            <div class="detail-cell"><span>Jenis</span><strong id="detailJenis">-</strong></div>
+          </div>
+          <div class="edit-action-row">
+            <div class="field"><label>OH Fisik Baru</label><input type="number" id="newOH" placeholder="Masukkan OH Fisik"></div>
+            <button class="save-oh-btn" onclick="saveOH()">✎ &nbsp; SIMPAN OH</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="master-data" class="panel app-data-panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">▤</div>
+          <div><h2>Master Data</h2><p>Data item dari MASTER DATA — hanya untuk monitoring</p></div>
+          <button class="reset-top" onclick="loadMasterDataWeb()">↻ Refresh</button>
+        </div>
+        <div class="data-toolbar">
+          <input id="masterWebSearch" type="text" placeholder="Cari kode / nama item..." oninput="filterMasterWeb()">
+          <span id="masterWebCount">0 item</span>
+        </div>
+        <div class="web-table-wrap" id="masterWebTable"><div class="web-empty">Memuat Master Data...</div></div>
+      </section>
+
+      <section id="database" class="panel app-data-panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">▥</div>
+          <div><h2>Database</h2><p>Seluruh histori tersimpan, termasuk ISP dan AKHIR HARI</p></div>
+          <button class="reset-top" onclick="loadDatabaseWeb()">↻ Refresh</button>
+        </div>
+        <div class="filter-grid database-filters">
+          <div class="field"><label>From Date</label><input type="date" id="dbFrom"></div>
+          <div class="field"><label>To Date</label><input type="date" id="dbTo"></div>
+          <div class="field"><label>Proses</label><select id="dbJenis"><option value="">SEMUA</option><option value="AKHIR HARI">AKHIR HARI</option><option value="ISP">ISP</option></select></div>
+          <div class="field"><label>Cari Item</label><input type="text" id="dbSearch" placeholder="Kode / nama item..."></div>
+          <button class="show-btn" onclick="loadDatabaseWeb()">Tampilkan</button>
+        </div>
+        <div class="data-toolbar"><span id="dbCount">0 data</span></div>
+        <div class="web-table-wrap" id="databaseWebTable"><div class="web-empty">Belum ada data.</div></div>
+      </section>
+
+      <section id="laporan" class="panel app-data-panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">▧</div>
+          <div><h2>Laporan</h2><p>Ringkasan AKHIR HARI dan akses export</p></div>
+        </div>
+        <div class="report-filter">
+          <div class="field"><label>From Date</label><input type="date" id="reportFrom"></div>
+          <div class="field"><label>To Date</label><input type="date" id="reportTo"></div>
+          <div class="field"><label>Cari Item</label><input type="text" id="reportSearch" placeholder="Kode / nama item..."></div>
+          <button class="show-btn" onclick="loadReportSummary()">Tampilkan</button>
+        </div>
+        <div class="report-cards" id="reportCards">
+          <div><span>Total Item</span><strong>0</strong></div>
+          <div><span>Minus</span><strong>0</strong></div>
+          <div><span>Plus</span><strong>0</strong></div>
+          <div><span>Net</span><strong>0</strong></div>
+        </div>
+        <div class="export-title">Export AKHIR HARI</div>
+        <div class="export-grid">
+          <button class="export-btn red" onclick="exportReport('MINUS','PDF')">▧ &nbsp; MINUS - PDF</button>
+          <button class="export-btn green" onclick="exportReport('MINUS','XLSX')">▤ &nbsp; MINUS - EXCEL</button>
+          <button class="export-btn red" onclick="exportReport('PLUS','PDF')">▧ &nbsp; PLUS - PDF</button>
+          <button class="export-btn green" onclick="exportReport('PLUS','XLSX')">▤ &nbsp; PLUS - EXCEL</button>
+        </div>
+      </section>
+
+
+      <section id="food-planner" class="panel app-data-panel">
+        <div class="panel-head simple"><div class="panel-icon">🍱</div><div><h2>Food Planner</h2><p>Kebutuhan FR berdasarkan hari yang sama pada minggu sebelumnya.</p></div></div>
+        <div class="data-toolbar"><div><strong id="foodPlannerDateLabel">Tanggal proses: -</strong><p id="foodPlannerSourceLabel" style="font-size:10px;color:#718298;margin:4px 0 0">Sumber FR: -</p></div><button class="show-btn" type="button" onclick="loadFoodPlannerWeb()">MUAT ULANG</button></div>
+        <div id="foodPlannerMessage" class="web-empty">Food Planner akan tersedia setelah Proses Akhir Hari berhasil.</div>
+        <div class="web-table-wrap" id="foodPlannerTable" style="display:none"></div>
+      </section>
+
+      <section id="pengaturan" class="panel app-data-panel">
+        <div class="panel-head simple">
+          <div class="panel-icon blue">⚙</div>
+          <div><h2>Pengaturan</h2><p>Informasi sistem dan akses mobile</p></div>
+        </div>
+        <div class="settings-grid">
+          <div class="setting-card"><span>APLIKASI</span><strong>STOCK MENTENG</strong><small>Stock Control V5.23</small></div>
+          <div class="setting-card"><span>TIMEZONE</span><strong>Asia/Jakarta</strong><small>Waktu proses mengikuti WIB</small></div>
+          <div class="setting-card"><span>TANGGAL MASTER</span><strong id="settingMasterDate">Memuat...</strong><small>Sumber tanggal proses dari MASTER DATA</small></div>
+        </div>
+        <div class="mobile-install-card">
+          <div><strong>📱 Akses cepat dari HP</strong><p>Gunakan Web App ini sebagai shortcut di layar utama HP. Data tetap tersimpan di Google Sheets.</p></div>
+          <button class="show-btn" type="button" onclick="showInstallGuide()">PASANG DI HP</button>
+        </div>
+      </section>
+
+      <footer class="enterprise-footer">
+        <div><strong>Stock Control V5</strong><span>|</span>Sari Rasa Group<small>Inventory today, better tomorrow</small></div>
+        <div><span>Version 5.23</span><strong>● All Systems Operational</strong></div>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
+<div class="loading-overlay" id="loading"><div class="loading-box"><div class="spinner"></div><div id="loadingText">Memproses...</div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+let stockItems = [];
+let filteredItems = [];
+let selectedItem = null;
+
+
+/* ==========================================================
+   INIT
+========================================================== */
+
+document.addEventListener(
+  'DOMContentLoaded',
+  function() {
+
+    setToday();
+
+    loadAll();
+
+    loadEditItemsByDate(false);
+    initStockMentengV520();
+
+  }
+);
+
+
+/* ==========================================================
+   SET TODAY
+========================================================== */
+
+function setToday() {
+
+  const now =
+    new Date();
+
+  const year =
+    now.getFullYear();
+
+  const month =
+    String(
+      now.getMonth() + 1
+    ).padStart(2,'0');
+
+  const day =
+    String(
+      now.getDate()
+    ).padStart(2,'0');
+
+  const today =
+    year +
+    '-' +
+    month +
+    '-' +
+    day;
+
+  document
+    .getElementById('editDate')
+    .value = today;
+
+}
+
+
+function loadEditItemsByDate(showMessage, afterLoad) {
+
+  const dateEl =
+    document.getElementById('editDate');
+
+  const tanggal =
+    dateEl ? dateEl.value : '';
+
+  selectedItem = null;
+
+  const detail =
+    document.getElementById('itemDetail');
+
+  if (detail) {
+    detail.style.display = 'none';
+  }
+
+  if (!tanggal) {
+    stockItems = [];
+    filteredItems = [];
+    renderItemSelect();
+    if (typeof afterLoad === 'function') {
+      afterLoad();
+    }
+    return;
+  }
+
+  showLoading(
+    'Memuat item DATABASE ' +
+    formatDateDisplay(tanggal) +
+    '...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(function(items) {
+
+      hideLoading();
+
+      stockItems =
+        Array.isArray(items)
+          ? items
+          : [];
+
+      filteredItems =
+        stockItems.slice();
+
+      renderItemSelect();
+
+      if (typeof afterLoad === 'function') {
+        afterLoad();
+      }
+
+      if (showMessage) {
+        showToast(
+          stockItems.length +
+          ' item tersedia dari DATABASE tanggal ' +
+          formatDateDisplay(tanggal)
+        );
+      }
+
+    })
+
+    .withFailureHandler(function(error) {
+
+      hideLoading();
+
+      stockItems = [];
+      filteredItems = [];
+      renderItemSelect();
+
+      showToast(
+        'Gagal membaca DATABASE: ' +
+        getErrorMessage(error)
+      );
+
+    })
+
+    .getStockItems(tanggal);
+
+}
+
+function formatDateDisplay(value) {
+
+  const parts =
+    String(value || '').split('-');
+
+  if (parts.length === 3) {
+    return (
+      parts[2] +
+      '/' +
+      parts[1] +
+      '/' +
+      parts[0]
+    );
+  }
+
+  return value || '-';
+}
+
+
+/* ==========================================================
+   LOAD ALL
+========================================================== */
+
+function loadMasterProcessDate() {
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(info) {
+
+        const el =
+          document.getElementById(
+            'masterProcessDate'
+          );
+
+        if (!el) return;
+
+        if (
+          info &&
+          info.success
+        ) {
+
+          el.textContent =
+            'Tanggal MASTER DATA: ' +
+            (
+              info.tanggalDisplay ||
+              info.tanggal
+            );
+
+        } else {
+
+          el.textContent =
+            'Tanggal MASTER DATA: ' +
+            (
+              info && info.message
+                ? info.message
+                : 'belum diisi'
+            );
+
+        }
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        const el =
+          document.getElementById(
+            'masterProcessDate'
+          );
+
+        if (el) {
+          el.textContent =
+            'Tanggal MASTER DATA: ' +
+            getErrorMessage(error);
+        }
+
+      }
+    )
+
+    .getMasterProcessDateInfo();
+
+}
+
+function loadAll() {
+
+  loadMasterProcessDate();
+
+  showLoading(
+    'Memuat data...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(data) {
+
+        hideLoading();
+
+        if (!data) {
+          return;
+        }
+
+        updateDashboard(
+          data.dashboard
+        );
+
+        renderHistory(
+          data.history || []
+        );
+
+        // Edit OH Fisik selalu mengikuti DATABASE
+        // berdasarkan tanggal yang dipilih.
+        loadEditItemsByDate(false);
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        stockItems = [];
+        filteredItems = [];
+        renderItemSelect();
+
+        showToast(
+          'Gagal memuat data: ' +
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .getInitialData();
+
+}
+
+
+/* ==========================================================
+   DASHBOARD
+========================================================== */
+
+function updateDashboard(
+  dashboard
+) {
+
+  if (!dashboard) {
+    return;
+  }
+
+  document
+    .getElementById('totalHistory')
+    .textContent =
+    formatNumber(
+      dashboard.total || 0
+    );
+
+  document
+    .getElementById('totalMinus')
+    .textContent =
+    formatNumber(
+      dashboard.minus || 0
+    );
+
+  document
+    .getElementById('totalPlus')
+    .textContent =
+    formatNumber(
+      dashboard.plus || 0
+    );
+
+  document
+    .getElementById('totalNet')
+    .textContent =
+    formatNumber(
+      dashboard.net || 0
+    );
+
+}
+
+
+/* ==========================================================
+   PROCESS ISP
+========================================================== */
+
+function prosesISP() {
+
+  if (
+    !confirm(
+      'Jalankan PROSES ISP?'
+    )
+  ) {
+    return;
+  }
+
+  showLoading(
+    'Memproses ISP...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(result) {
+
+        hideLoading();
+
+        if (saveButton) {
+          saveButton.disabled = false;
+          saveButton.textContent =
+            saveButton.dataset.oldText || 'SIMPAN OH';
+        }
+
+        if (
+          result &&
+          result.success
+        ) {
+
+          showToast(
+            result.message
+          );
+
+          loadAll();
+
+        } else {
+
+          showToast(
+            result.message ||
+            'Proses gagal.'
+          );
+
+        }
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        stockItems = [];
+        filteredItems = [];
+        renderItemSelect();
+
+        if (typeof afterLoad === 'function') {
+          afterLoad();
+        }
+
+        showToast(
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .prosesISP();
+
+}
+
+
+/* ==========================================================
+   PROCESS AKHIR HARI
+========================================================== */
+
+function prosesAkhirHari() {
+
+  showLoading(
+    'Membaca tanggal MASTER DATA...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(info) {
+
+        hideLoading();
+
+        if (!info || !info.success) {
+
+          showToast(
+            (info && info.message) ||
+            'Tanggal MASTER DATA belum siap.'
+          );
+
+          return;
+        }
+
+        const tanggal =
+          info.tanggalDisplay ||
+          info.tanggal;
+
+        if (
+          !confirm(
+            'PROSES AKHIR HARI akan menggunakan tanggal MASTER DATA:\\n\\n' +
+            tanggal +
+            '\\n\\nLanjutkan proses?'
+          )
+        ) {
+          return;
+        }
+
+        showLoading(
+          'Memproses Akhir Hari ' +
+          tanggal +
+          '...'
+        );
+
+        google.script.run
+
+          .withSuccessHandler(
+            function(result) {
+
+              hideLoading();
+
+              if (
+                result &&
+                result.success
+              ) {
+
+                showToast(
+                  result.message
+                );
+
+                loadAll();
+                loadFoodPlannerWeb();
+
+              } else {
+
+                showToast(
+                  (result && result.message) ||
+                  'Proses gagal.'
+                );
+
+              }
+
+            }
+          )
+
+          .withFailureHandler(
+            function(error) {
+
+              hideLoading();
+
+              showToast(
+                getErrorMessage(error)
+              );
+
+            }
+          )
+
+          .prosesAkhirHari();
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        showToast(
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .getMasterProcessDateInfo();
+
+}
+
+
+/* ==========================================================
+   LOAD HISTORY
+========================================================== */
+
+function loadHistory() {
+
+  showLoading(
+    'Memuat history...'
+  );
+
+  const filters =
+    getHistoryFilters();
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(data) {
+
+        hideLoading();
+
+        renderHistory(
+          data || []
+        );
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        showToast(
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .getHistory(
+      filters
+    );
+
+}
+
+
+/* ==========================================================
+   GET FILTER
+========================================================== */
+
+function getHistoryFilters() {
+
+  return {
+
+    from:
+      document
+        .getElementById('filterFrom')
+        .value,
+
+    to:
+      document
+        .getElementById('filterTo')
+        .value,
+
+    type:
+      document
+        .getElementById('filterType')
+        .value,
+
+    search:
+      document
+        .getElementById('filterSearch')
+        .value,
+
+    // History Dashboard hanya menampilkan AKHIR HARI.
+    // Record ISP tetap tersimpan di DATABASE.
+    jenis: 'AKHIR HARI'
+
+  };
+
+}
+
+
+/* ==========================================================
+   RESET FILTER
+========================================================== */
+
+function resetFilter() {
+
+  document
+    .getElementById('filterFrom')
+    .value = '';
+
+  document
+    .getElementById('filterTo')
+    .value = '';
+
+  document
+    .getElementById('filterType')
+    .value = 'SEMUA';
+
+  document
+    .getElementById('filterSearch')
+    .value = '';
+
+  loadHistory();
+
+}
+
+
+/* ==========================================================
+   RENDER HISTORY
+========================================================== */
+
+function getHistoryStatusClass(selisih) {
+  const n = Number(selisih || 0);
+  if (n < 0) return 'minus';
+  if (n > 0) return 'plus';
+  return 'normal';
+}
+
+function renderHistory(data) {
+
+  const countEl =
+    document.getElementById('historyResultCount');
+
+  if (countEl) {
+    countEl.textContent =
+      'Menampilkan ' +
+      ((data || []).length) +
+      ' data';
+  }
+
+  const container =
+    document.getElementById('historyList');
+
+  if (!container) return;
+
+  if (!data || data.length === 0) {
+    container.innerHTML = `
+      <div class="history-empty">
+        <strong>Tidak ada data history</strong>
+        <span>Coba pilih SEMUA dan kosongkan pencarian.</span>
+      </div>
+    `;
+    return;
+  }
+
+  const sortedData =
+    [...data].sort(function(a,b) {
+
+      const namaCompare =
+        String(a.nama || '')
+          .trim()
+          .localeCompare(
+            String(b.nama || '').trim(),
+            'id',
+            {
+              numeric:true,
+              sensitivity:'base'
+            }
+          );
+
+      if (namaCompare !== 0) {
+        return namaCompare;
+      }
+
+      return String(a.kode || '')
+        .localeCompare(
+          String(b.kode || ''),
+          'id',
+          {
+            numeric:true,
+            sensitivity:'base'
+          }
+        );
+
+    });
+
+  let rows = '';
+
+  sortedData.forEach(function(item) {
+
+    const value =
+      Number(item.selisih || 0);
+
+    let status = 'NORMAL';
+    let statusClass = 'normal';
+
+    if (value < 0) {
+      status = 'MINUS';
+      statusClass = 'minus';
+    } else if (value > 0) {
+      status = 'PLUS';
+      statusClass = 'plus';
+    }
+
+    const jenis =
+      String(item.jenis || '-').toUpperCase();
+
+    const tanggal =
+      String(item.tanggal || '');
+
+    const editPayload =
+      encodeURIComponent(
+        JSON.stringify({
+          kode: item.kode || '',
+          tanggal: tanggal,
+          nama: item.nama || ''
+        })
+      );
+
+    rows += `
+      <tr class="history-row">
+
+        <td class="col-item">
+          <div class="item-main">
+            ${escapeHtml(item.nama || '-')}
+          </div>
+          <div class="item-code">
+            ${escapeHtml(item.kode || '-')}
+          </div>
+        </td>
+
+        <td>
+          <span class="process-pill">
+            ${escapeHtml(jenis)}
+          </span>
+        </td>
+
+        <td class="date-cell">
+          ${escapeHtml(tanggal || '-')}
+        </td>
+
+        <td class="number-cell">
+          ${formatNumber(item.saldo)}
+        </td>
+
+        <td class="number-cell">
+          ${formatNumber(item.oh)}
+        </td>
+
+        <td class="number-cell ${statusClass}-value">
+          <strong>${formatNumber(item.selisih)}</strong>
+        </td>
+
+        <td>
+          <span class="unit-text">
+            ${escapeHtml(item.satuan || '-')}
+          </span>
+        </td>
+
+        <td class="action-cell">
+          <button
+            type="button"
+            class="history-edit-btn"
+            data-edit="${editPayload}"
+            onclick="editHistoryItem(this)"
+            title="Edit OH Fisik"
+          >
+            ✎ EDIT OH
+          </button>
+        </td>
+
+      </tr>
+    `;
+  });
+
+  container.innerHTML = `
+    <div class="history-matrix-wrap">
+
+      <table class="history-matrix">
+
+        <thead>
+          <tr>
+            <th>ITEM / KODE</th>
+            <th>PROSES</th>
+            <th>TANGGAL</th>
+            <th>SALDO AKHIR</th>
+            <th>OH FISIK</th>
+            <th>SELISIH</th>
+            <th>SATUAN</th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          ${rows}
+        </tbody>
+
+      </table>
+
+    </div>
+  `;
+}
+
+
+/* ==========================================================
+   EDIT OH DARI HISTORY
+========================================================== */
+
+function historyDateToInputDate(value) {
+
+  const text = String(value || '').trim();
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(text)) {
+    return text;
+  }
+
+  const match = text.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+
+  if (match) {
+    return match[3] + '-' +
+      String(match[2]).padStart(2, '0') + '-' +
+      String(match[1]).padStart(2, '0');
+  }
+
+  return '';
+}
+
+
+function editHistoryItem(button) {
+
+  if (!button) return;
+
+  let payload;
+
+  try {
+    payload = JSON.parse(
+      decodeURIComponent(
+        button.getAttribute('data-edit') || ''
+      )
+    );
+  } catch (error) {
+    showToast('Data item tidak valid.');
+    return;
+  }
+
+  if (!payload.kode || !payload.tanggal) {
+    showToast('Kode atau tanggal item tidak tersedia.');
+    return;
+  }
+
+  const editDate = document.getElementById('editDate');
+  const itemSearch = document.getElementById('itemSearch');
+  const inputDate = historyDateToInputDate(payload.tanggal);
+
+  if (!inputDate) {
+    showToast('Format tanggal history tidak valid.');
+    return;
+  }
+
+  // PENTING: input type=date harus menggunakan yyyy-MM-dd.
+  // Sebelumnya payload berformat dd/MM/yyyy sehingga tanggal tidak berubah.
+  if (editDate) {
+    editDate.value = inputDate;
+  }
+
+  if (itemSearch) {
+    itemSearch.value = payload.nama || '';
+  }
+
+  const section = document.getElementById('edit-oh');
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+
+  // Muat ulang daftar item berdasarkan tanggal yang baru diklik,
+  // lalu buka detail item yang sama.
+  loadEditItemsByDate(false, function() {
+
+    filterItems();
+
+    const select = document.getElementById('itemSelect');
+    if (select) {
+      select.value = payload.kode;
+    }
+
+    showLoading('Membuka data Edit OH...');
+
+    google.script.run
+      .withSuccessHandler(function(result) {
+
+        hideLoading();
+
+        if (!result || !result.success) {
+          showToast(
+            (result && result.message) ||
+            'Data item tidak ditemukan.'
+          );
+          return;
+        }
+
+        selectedItem = result.item;
+        showItemDetail(result.item);
+
+        if (select) {
+          select.value = payload.kode;
+        }
+
+        showToast(
+          'Data ' +
+          (payload.nama || payload.kode) +
+          ' tanggal ' +
+          payload.tanggal +
+          ' siap diedit.'
+        );
+
+      })
+      .withFailureHandler(function(error) {
+
+        hideLoading();
+
+        showToast(
+          'Gagal membuka Edit OH: ' +
+          getErrorMessage(error)
+        );
+
+      })
+      .getItemDetail(
+        payload.kode,
+        inputDate
+      );
+  });
+}
+
+
+/* ==========================================================
+   ITEM SEARCH
+========================================================== */
+
+function refreshEditItemsForDate() {
+  // Daftar item tetap berasal dari MASTER DATA.
+  // Tanggal hanya menentukan data DATABASE yang tampil setelah item dipilih.
+  if (Array.isArray(stockItems) && stockItems.length) {
+    filteredItems = stockItems.slice();
+    renderItemSelect();
+  }
+}
+
+function filterItems() {
+  const input = document.getElementById('itemSearch');
+  const search = String(input ? input.value : '').trim().toLowerCase();
+  const source = Array.isArray(stockItems) ? stockItems : [];
+
+  if (!search) {
+    filteredItems = source.slice();
+  } else {
+    filteredItems = source.filter(function(item) {
+      const kode = String(item.kode || '').trim().toLowerCase();
+      const nama = String(item.nama || '').trim().toLowerCase();
+      return kode.includes(search) || nama.includes(search);
+    });
+  }
+
+  renderItemSelect();
+}
+
+
+/* ==========================================================
+   RENDER ITEM SELECT
+========================================================== */
+
+function renderItemSelect() {
+  const select = document.getElementById('itemSelect');
+  if (!select) return;
+
+  const current = select.value;
+  const list = Array.isArray(filteredItems) ? filteredItems : [];
+
+  let options = `<option value="">-- Pilih Item --</option>`;
+
+  if (list.length === 0) {
+    options += `<option value="" disabled>Tidak ada item yang ditemukan</option>`;
+  } else {
+    list.forEach(function(item) {
+      options += `
+        <option value="${escapeAttr(item.kode)}">
+          ${escapeHtml(item.nama || '-')} — ${escapeHtml(item.kode || '-')}
+        </option>`;
+    });
+  }
+
+  select.innerHTML = options;
+
+  if (list.some(item => String(item.kode) === String(current))) {
+    select.value = current;
+  }
+
+  const countEl = document.getElementById('editItemCount');
+  if (countEl) countEl.textContent = list.length + ' item tersedia';
+}
+
+
+/* ==========================================================
+   SELECT ITEM
+========================================================== */
+
+function getEditDateValue() {
+  const el = document.getElementById('editDate');
+  return el ? el.value : '';
+}
+
+function selectItem() {
+  const select = document.getElementById('itemSelect');
+  const kode = select ? select.value : '';
+
+  if (!kode) {
+    selectedItem = null;
+    document.getElementById('itemDetail').style.display = 'none';
+    return;
+  }
+
+  showLoading('Memuat detail item...');
+
+  google.script.run
+    .withSuccessHandler(function(result) {
+      hideLoading();
+
+      if (!result || !result.success) {
+        selectedItem = null;
+        document.getElementById('itemDetail').style.display = 'none';
+        showToast((result && result.message) || 'Detail item tidak ditemukan.');
+        return;
+      }
+
+      selectedItem = result.item;
+      showItemDetail(result.item);
+    })
+    .withFailureHandler(function(error) {
+      hideLoading();
+      showToast('Gagal mengambil detail item: ' + getErrorMessage(error));
+    })
+    .getItemDetail(
+      kode,
+      document.getElementById('editDate').value
+    );
+}
+
+
+/* ==========================================================
+   SHOW ITEM DETAIL
+========================================================== */
+
+function showItemDetail(
+  item
+) {
+  const jenisEl =
+    document.getElementById('detailJenis');
+
+  if (jenisEl) {
+    jenisEl.textContent =
+      item.jenis || '-';
+  }
+
+
+
+  document
+    .getElementById(
+      'itemDetail'
+    )
+    .style.display =
+    'block';
+
+  document
+    .getElementById(
+      'detailKode'
+    )
+    .textContent =
+    item.kode || '-';
+
+  document
+    .getElementById(
+      'detailNama'
+    )
+    .textContent =
+    item.nama || '-';
+
+  document
+    .getElementById(
+      'detailSatuan'
+    )
+    .textContent =
+    item.satuan || '-';
+
+  document
+    .getElementById(
+      'detailSaldo'
+    )
+    .textContent =
+    formatNumber(
+      item.saldo
+    );
+
+  document
+    .getElementById(
+      'detailOH'
+    )
+    .textContent =
+    item.oh === '' || item.oh === null || item.oh === undefined
+      ? 'BELUM DIISI'
+      : formatNumber(item.oh);
+
+  document
+    .getElementById(
+      'detailSelisih'
+    )
+    .textContent =
+    formatNumber(
+      item.selisih
+    );
+
+  document
+    .getElementById(
+      'newOH'
+    )
+    .value =
+    isValidNumber(
+      item.oh
+    )
+      ? item.oh
+      : '';
+
+}
+
+
+/* ==========================================================
+   SAVE OH
+========================================================== */
+
+function saveOH() {
+
+  const saveButton = document.querySelector(
+    '#itemDetail button[onclick="saveOH()"]'
+  );
+
+  if (!selectedItem) {
+
+    showToast(
+      'Pilih item terlebih dahulu.'
+    );
+
+    return;
+
+  }
+
+  const newOH =
+    document
+      .getElementById(
+        'newOH'
+      )
+      .value;
+
+  if (
+    newOH === '' ||
+    isNaN(Number(newOH))
+  ) {
+
+    showToast(
+      'OH Fisik harus berupa angka.'
+    );
+
+    return;
+
+  }
+
+  const tanggal =
+    document
+      .getElementById(
+        'editDate'
+      )
+      .value;
+
+  if (!tanggal) {
+
+    showToast(
+      'Tanggal harus diisi.'
+    );
+
+    return;
+
+  }
+
+  if (
+    !confirm(
+      'Simpan OH Fisik ' +
+      selectedItem.nama +
+      ' menjadi ' +
+      newOH +
+      '?'
+    )
+  ) {
+    return;
+  }
+
+  if (saveButton) {
+    saveButton.disabled = true;
+    saveButton.dataset.oldText = saveButton.textContent;
+    saveButton.textContent = 'MENYIMPAN...';
+  }
+
+  showLoading(
+    'Menyimpan OH...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(result) {
+
+        hideLoading();
+
+        if (
+          result &&
+          result.success
+        ) {
+
+          showToast(
+            result.message
+          );
+
+          selectedItem =
+            result.item || {
+              ...selectedItem,
+              saldo: result.saldo,
+              oh: result.oh,
+              selisih: result.selisih,
+              tanggal: result.tanggal
+            };
+
+          showItemDetail(
+            selectedItem
+          );
+
+          loadAll();
+          loadEditItemsByDate(false);
+
+        } else {
+
+          showToast(
+            result.message ||
+            'Gagal menyimpan OH.'
+          );
+
+        }
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        if (saveButton) {
+          saveButton.disabled = false;
+          saveButton.textContent =
+            saveButton.dataset.oldText || 'SIMPAN OH';
+        }
+
+        showToast(
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .editOHFisik(
+      selectedItem.kode,
+      tanggal,
+      Number(newOH)
+    );
+
+}
+
+
+/* ==========================================================
+   EXPORT DATA
+========================================================== */
+
+function exportData(
+  type,
+  format
+) {
+
+  const filters =
+    getHistoryFilters();
+
+  /*
+   * Export hanya AKHIR HARI
+   */
+  const label =
+    type +
+    ' → ' +
+    (
+      format === 'XLSX'
+        ? 'EXCEL'
+        : 'PDF'
+    );
+
+  if (
+    !confirm(
+      'Export ' +
+      label +
+      '?\n\n' +
+      'Data yang diexport adalah ' +
+      'AKHIR HARI.'
+    )
+  ) {
+    return;
+  }
+
+  showLoading(
+    'Menyiapkan ' +
+    label +
+    '...'
+  );
+
+  google.script.run
+
+    .withSuccessHandler(
+      function(result) {
+
+        hideLoading();
+
+        if (
+          !result ||
+          !result.success
+        ) {
+
+          showToast(
+            'Export gagal.'
+          );
+
+          return;
+
+        }
+
+        downloadBase64File(
+          result.data,
+          result.mimeType,
+          result.filename
+        );
+
+        showToast(
+          'Export berhasil: ' +
+          result.filename
+        );
+
+      }
+    )
+
+    .withFailureHandler(
+      function(error) {
+
+        hideLoading();
+
+        showToast(
+          getErrorMessage(error)
+        );
+
+      }
+    )
+
+    .exportHistoryData(
+      type,
+      format,
+      filters
+    );
+
+}
+
+
+/* ==========================================================
+   DOWNLOAD BASE64
+========================================================== */
+
+function downloadBase64File(
+  base64,
+  mimeType,
+  filename
+) {
+
+  const byteCharacters =
+    atob(base64);
+
+  const byteNumbers =
+    new Array(
+      byteCharacters.length
+    );
+
+  for (
+    let i = 0;
+    i < byteCharacters.length;
+    i++
+  ) {
+
+    byteNumbers[i] =
+      byteCharacters.charCodeAt(i);
+
+  }
+
+  const byteArray =
+    new Uint8Array(
+      byteNumbers
+    );
+
+  const blob =
+    new Blob(
+      [byteArray],
+      {
+        type:
+          mimeType ||
+          'application/octet-stream'
+      }
+    );
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+  const link =
+    document.createElement(
+      'a'
+    );
+
+  link.href =
+    url;
+
+  link.download =
+    filename;
+
+  document
+    .body
+    .appendChild(link);
+
+  link.click();
+
+  link.remove();
+
+  setTimeout(
+    function() {
+
+      URL.revokeObjectURL(
+        url
+      );
+
+    },
+    1000
+  );
+
+}
+
+
+/* ==========================================================
+   LOADING
+========================================================== */
+
+function showLoading(
+  text
+) {
+
+  document
+    .getElementById(
+      'loading'
+    )
+    .style.display =
+    'flex';
+
+  document
+    .getElementById(
+      'loadingText'
+    )
+    .textContent =
+    text ||
+    'Memproses...';
+
+}
+
+
+function hideLoading() {
+
+  document
+    .getElementById(
+      'loading'
+    )
+    .style.display =
+    'none';
+
+}
+
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+let toastTimer = null;
+
+function showToast(
+  message
+) {
+
+  const toast =
+    document
+      .getElementById(
+        'toast'
+      );
+
+  toast.textContent =
+    message || '';
+
+  toast.classList.add(
+    'show'
+  );
+
+  clearTimeout(
+    toastTimer
+  );
+
+  toastTimer =
+    setTimeout(
+      function() {
+
+        toast.classList.remove(
+          'show'
+        );
+
+      },
+      3500
+    );
+
+}
+
+
+/* ==========================================================
+   NUMBER FORMAT
+========================================================== */
+
+function formatNumber(
+  value
+) {
+
+  if (
+    value === null ||
+    value === undefined ||
+    value === ''
+  ) {
+    return '-';
+  }
+
+  const number =
+    Number(value);
+
+  if (isNaN(number)) {
+    return value;
+  }
+
+  return number.toLocaleString(
+    'id-ID',
+    {
+      maximumFractionDigits: 2
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   VALID NUMBER
+========================================================== */
+
+function isValidNumber(
+  value
+) {
+
+  return (
+    value !== null &&
+    value !== undefined &&
+    value !== '' &&
+    !isNaN(Number(value))
+  );
+
+}
+
+
+/* ==========================================================
+   ERROR MESSAGE
+========================================================== */
+
+function getErrorMessage(
+  error
+) {
+
+  if (!error) {
+    return 'Terjadi kesalahan.';
+  }
+
+  if (
+    typeof error === 'string'
+  ) {
+    return error;
+  }
+
+  return (
+    error.message ||
+    'Terjadi kesalahan.'
+  );
+
+}
+
+
+/* ==========================================================
+   ESCAPE HTML
+========================================================== */
+
+function escapeHtml(
+  value
+) {
+
+  return String(
+    value === null ||
+    value === undefined
+      ? ''
+      : value
+  )
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+
+}
+
+
+/* ==========================================================
+   ESCAPE ATTRIBUTE
+========================================================== */
+
+function escapeAttr(
+  value
+) {
+
+  return escapeHtml(
+    value
+  );
+
+}
+
+
+/* ==========================================================
+   STOCK MENTENG V5.23 — MENU NAVIGATION & WEB MODULES
+========================================================== */
+
+let masterWebData = [];
+
+function setupMenuNavigation() {
+  const nav = document.getElementById('sideNav');
+  if (!nav) return;
+  nav.querySelectorAll('.nav-item').forEach(function(link){
+    link.addEventListener('click', function(){
+      nav.querySelectorAll('.nav-item').forEach(x => x.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+}
+
+function loadMasterDataWeb() {
+  const search = document.getElementById('masterWebSearch');
+  const text = search ? search.value : '';
+  const box = document.getElementById('masterWebTable');
+  if (box) box.innerHTML = '<div class="web-empty">Memuat Master Data...</div>';
+
+  google.script.run
+    .withSuccessHandler(function(data){
+      masterWebData = Array.isArray(data) ? data : [];
+      renderMasterWeb(masterWebData);
+    })
+    .withFailureHandler(function(error){
+      if (box) box.innerHTML = '<div class="web-empty">Gagal memuat: '+escapeHtml(getErrorMessage(error))+'</div>';
+    })
+    .getMasterDataWeb({search:text, limit:3000});
+}
+
+function filterMasterWeb() {
+  const input = document.getElementById('masterWebSearch');
+  const q = String(input ? input.value : '').trim().toLowerCase();
+  const data = masterWebData.filter(function(item){
+    return !q || [item.kode,item.nama,item.satuan].join(' ').toLowerCase().includes(q);
+  });
+  renderMasterWeb(data);
+}
+
+function renderMasterWeb(data) {
+  const count = document.getElementById('masterWebCount');
+  if (count) count.textContent = data.length + ' item';
+  const box = document.getElementById('masterWebTable');
+  if (!box) return;
+  if (!data.length) { box.innerHTML='<div class="web-empty">Tidak ada item.</div>'; return; }
+  let html='<table class="web-table"><thead><tr><th>KODE</th><th>NAMA BARANG</th><th>SATUAN</th><th>SALDO AKHIR</th><th>TANGGAL</th></tr></thead><tbody>';
+  data.forEach(function(item){
+    html += '<tr><td>'+escapeHtml(item.kode)+'</td><td>'+escapeHtml(item.nama)+'</td><td>'+escapeHtml(item.satuan)+'</td><td class="num">'+formatNumber(item.saldo)+'</td><td>'+escapeHtml(formatDateDisplay(item.tanggal))+'</td></tr>';
+  });
+  html+='</tbody></table>'; box.innerHTML=html;
+}
+
+function loadDatabaseWeb() {
+  const box=document.getElementById('databaseWebTable');
+  if(box) box.innerHTML='<div class="web-empty">Memuat Database...</div>';
+  const filters={
+    from:(document.getElementById('dbFrom')||{}).value||'',
+    to:(document.getElementById('dbTo')||{}).value||'',
+    jenis:(document.getElementById('dbJenis')||{}).value||'',
+    search:(document.getElementById('dbSearch')||{}).value||'',
+    type:'SEMUA'
+  };
+  google.script.run.withSuccessHandler(function(data){
+    renderDatabaseWeb(Array.isArray(data)?data:[]);
+  }).withFailureHandler(function(error){
+    if(box) box.innerHTML='<div class="web-empty">Gagal memuat: '+escapeHtml(getErrorMessage(error))+'</div>';
+  }).getDatabaseWeb(filters);
+}
+
+function renderDatabaseWeb(data) {
+  const count=document.getElementById('dbCount'); if(count) count.textContent=data.length+' data';
+  const box=document.getElementById('databaseWebTable'); if(!box)return;
+  if(!data.length){box.innerHTML='<div class="web-empty">Tidak ada data.</div>';return;}
+  let html='<table class="web-table"><thead><tr><th>TANGGAL</th><th>PROSES</th><th>KODE</th><th>NAMA ITEM</th><th>SATUAN</th><th>SALDO</th><th>OH</th><th>SELISIH</th></tr></thead><tbody>';
+  data.forEach(function(item){
+    html+='<tr><td>'+escapeHtml(item.tanggal||'-')+'</td><td><span class="process-pill">'+escapeHtml(item.jenis||'-')+'</span></td><td>'+escapeHtml(item.kode||'-')+'</td><td>'+escapeHtml(item.nama||'-')+'</td><td>'+escapeHtml(item.satuan||'-')+'</td><td class="num">'+formatNumber(item.saldo)+'</td><td class="num">'+formatNumber(item.oh)+'</td><td class="num">'+formatNumber(item.selisih)+'</td></tr>';
+  });
+  html+='</tbody></table>'; box.innerHTML=html;
+}
+
+function loadReportSummary() {
+  const filters={
+    from:(document.getElementById('reportFrom')||{}).value||'',
+    to:(document.getElementById('reportTo')||{}).value||'',
+    search:(document.getElementById('reportSearch')||{}).value||''
+  };
+  google.script.run.withSuccessHandler(function(r){
+    r=r||{};
+    const vals=[r.total||0,r.minusCount||0,r.plusCount||0,r.net||0];
+    const cards=document.querySelectorAll('#reportCards>div strong');
+    cards.forEach((el,i)=>el.textContent=formatNumber(vals[i]));
+  }).withFailureHandler(function(error){showToast('Gagal memuat laporan: '+getErrorMessage(error));}).getReportSummaryWeb(filters);
+}
+
+function exportReport(type,format) {
+  const filters={
+    from:(document.getElementById('reportFrom')||{}).value||'',
+    to:(document.getElementById('reportTo')||{}).value||'',
+    type:type,
+    search:(document.getElementById('reportSearch')||{}).value||''
+  };
+  showLoading('Menyiapkan laporan...');
+  google.script.run.withSuccessHandler(function(result){
+    hideLoading();
+    if(!result||!result.success){showToast('Export gagal.');return;}
+    downloadBase64File(result.data,result.mimeType,result.filename);
+    showToast('Export berhasil: '+result.filename);
+  }).withFailureHandler(function(error){hideLoading();showToast(getErrorMessage(error));}).exportHistoryData(type,format,filters);
+}
+
+function showInstallGuide() {
+  const old=document.getElementById('installGuide'); if(old) old.remove();
+  const isIOS=/iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const steps=isIOS
+    ? '<ol><li>Buka halaman ini di <b>Safari</b>.</li><li>Tekan tombol <b>Share</b>.</li><li>Pilih <b>Add to Home Screen / Tambahkan ke Layar Utama</b>.</li><li>Tekan <b>Add</b>.</li></ol>'
+    : '<ol><li>Buka halaman ini di <b>Chrome Android</b>.</li><li>Tekan menu <b>⋮</b>.</li><li>Pilih <b>Tambahkan ke layar utama</b> atau <b>Install app</b> jika tersedia.</li><li>Konfirmasi pemasangan.</li></ol>';
+  const modal=document.createElement('div'); modal.id='installGuide'; modal.className='install-guide';
+  modal.innerHTML='<div class="install-guide-card"><h3>📱 STOCK MENTENG di HP</h3><p>Aplikasi ini adalah Web App. Dengan shortcut di layar utama, kamu bisa membukanya seperti aplikasi tanpa harus mencari link lagi.</p>'+steps+'<button type="button" onclick="document.getElementById(\'installGuide\').remove()">TUTUP</button></div>';
+  document.body.appendChild(modal);
+}
+
+function loadSettingsInfo(){
+  google.script.run.withSuccessHandler(function(info){
+    const el=document.getElementById('settingMasterDate');
+    if(el) el.textContent=(info&&info.masterDate&&info.masterDate.tanggalDisplay)||'-';
+  }).getWebSystemInfo();
+}
+
+
+function loadFoodPlannerWeb(){
+  const navLink=document.querySelector('.nav-item[href="#food-planner"]');
+  const box=document.getElementById('foodPlannerTable'); const msg=document.getElementById('foodPlannerMessage');
+  if(msg){msg.style.display='block';msg.textContent='Memuat Food Planner...';} if(box)box.style.display='none';
+  google.script.run.withSuccessHandler(function(r){
+    r=r||{};
+    if(navLink)navLink.style.display=r.unlocked?'flex':'none';
+    if(!r.success){if(msg)msg.textContent=r.message||'Food Planner belum tersedia.';return;}
+    const d=document.getElementById('foodPlannerDateLabel'); if(d)d.textContent='Tanggal proses: '+(r.tanggal||'-');
+    const s=document.getElementById('foodPlannerSourceLabel'); if(s)s.textContent='Sumber FR hari yang sama minggu sebelumnya: '+(r.sourceDate||'-');
+    if(msg){msg.textContent=r.message||'';msg.style.display=r.rows&&r.rows.length?'none':'block';}
+    if(!box)return; const rows=r.rows||[]; if(!rows.length){box.style.display='none';return;}
+    let h='<table class="web-table"><thead><tr><th>KODE</th><th>NAMA ITEM</th><th>MASBAR</th><th>SATUAN</th><th>IDEAL FR</th><th>OH FISIK</th><th>RECOMMENDED ORDER</th></tr></thead><tbody>';
+    rows.forEach(function(x){h+='<tr><td>'+escapeHtml(x.kode)+'</td><td>'+escapeHtml(x.nama)+'</td><td>'+escapeHtml(x.masbar)+'</td><td>'+escapeHtml(x.satuan)+'</td><td class="num">'+formatNumber(x.ideal)+'</td><td class="num">'+formatNumber(x.ohFisik)+'</td><td class="num">'+formatNumber(x.recommendedOrder)+'</td></tr>';});
+    h+='</tbody></table>';box.innerHTML=h;box.style.display='block';
+  }).withFailureHandler(function(e){if(msg)msg.textContent='Gagal memuat Food Planner: '+escapeHtml(getErrorMessage(e));}).getFoodPlannerWeb({});
+}
+
+function initStockMentengV520(){
+  setupMenuNavigation();
+  loadMasterDataWeb();
+  loadDatabaseWeb();
+  loadReportSummary();
+  loadSettingsInfo();
+  loadFoodPlannerWeb();
+}
+
+
+</script>
+<script>
+(function(){
+  function updateEnterpriseClock(){
+    var d=new Date();
+    var el=document.getElementById('headerDate');
+    if(!el)return;
+    var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    var dd=String(d.getDate()).padStart(2,'0');
+    var mm=String(d.getMonth()+1).padStart(2,'0');
+    var yyyy=d.getFullYear();
+    var hh=String(d.getHours()).padStart(2,'0');
+    var mi=String(d.getMinutes()).padStart(2,'0');
+    var ss=String(d.getSeconds()).padStart(2,'0');
+    el.textContent=days[d.getDay()]+', '+dd+' '+months[d.getMonth()]+' '+yyyy;
+    var sub=el.parentElement&&el.parentElement.querySelector('small');
+    if(sub)sub.textContent=hh+':'+mi+':'+ss+'  •  Stock Control System';
+  }
+  updateEnterpriseClock(); setInterval(updateEnterpriseClock,1000);
+})();
+</script>
+
+</body>
+</html>
