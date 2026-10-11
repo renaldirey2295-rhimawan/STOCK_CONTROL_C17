@@ -2415,54 +2415,21 @@ function loadSettingsInfo(){
 
 function loadFoodPlannerWeb(){
   const navLink=document.querySelector('.nav-item[href="#food-planner"]');
-  const box=document.getElementById('foodPlannerTable');
-  const msg=document.getElementById('foodPlannerMessage');
-  if(msg){msg.style.display='block';msg.textContent='Memuat Food Planner...';}
-  if(box)box.style.display='none';
+  const box=document.getElementById('foodPlannerTable'); const msg=document.getElementById('foodPlannerMessage');
+  if(msg){msg.style.display='block';msg.textContent='Memuat Food Planner...';} if(box)box.style.display='none';
   google.script.run.withSuccessHandler(function(r){
     r=r||{};
     if(navLink)navLink.style.display=r.unlocked?'flex':'none';
     if(!r.success){if(msg)msg.textContent=r.message||'Food Planner belum tersedia.';return;}
-    const d=document.getElementById('foodPlannerDateLabel');
-    if(d)d.textContent='Tanggal proses: '+(r.tanggal||'-')+' | Kebutuhan: '+(r.needDate||'-');
-    const s=document.getElementById('foodPlannerSourceLabel');
-    if(s)s.textContent='Sumber FR hari yang sama minggu sebelumnya: '+(r.sourceDate||'-');
-    const rows=r.rows||[];
-    if(msg){msg.textContent=r.message||'';msg.style.display=rows.length?'none':'block';}
-    if(!box)return;
-    if(!rows.length){box.style.display='none';return;}
-    // MASBAR sengaja tidak ditampilkan. Urutan header mengikuti data yang dirender.
-    let h='<table class="web-table"><thead><tr>'+
-      '<th>KODE</th><th>NAMA ITEM</th><th>SATUAN</th><th>KIRIM</th><th>SALES</th><th>MASUK</th><th>WASTE</th><th>IDEAL</th><th>AKHIR</th><th>OH FISIK</th><th>TOTAL STOK</th><th>FR</th><th>STATUS STOK</th>'+
-      '</tr></thead><tbody>';
-    rows.forEach(function(x){
-      const unmatched=String(x.statusStok||'').toUpperCase().indexOf('KODE TIDAK DITEMUKAN')===0 || x.totalStok===null || x.totalStok===undefined;
-      const surplus=!unmatched && Number(x.totalStok)>Number(x.ideal);
-      const frLabel=unmatched?'-':(surplus?'PLUS':formatNumber(x.fr));
-      const statusLabel=unmatched?(x.statusStok||'KODE TIDAK DITEMUKAN'):(surplus?'PLUS':'OK');
-      const statusClass=unmatched?'status-warning':(surplus?'status-success':'');
-      h+='<tr>'+
-        '<td>'+escapeHtml(x.kode)+'</td>'+
-        '<td>'+escapeHtml(x.nama)+'</td>'+
-        '<td>'+escapeHtml(x.satuan)+'</td>'+
-        '<td class="num">'+formatNumber(x.kirim)+'</td>'+
-        '<td class="num">'+formatNumber(x.sales)+'</td>'+
-        '<td class="num">'+formatNumber(x.masuk)+'</td>'+
-        '<td class="num">'+formatNumber(x.waste)+'</td>'+
-        '<td class="num">'+formatNumber(x.ideal)+'</td>'+
-        '<td class="num">'+formatNumber(x.akhir)+'</td>'+
-        '<td class="num">'+formatNumber(x.ohFisik)+'</td>'+
-        '<td class="num">'+formatNumber(x.totalStok)+'</td>'+
-        '<td class="num" style="font-weight:700;'+(surplus?'color:#15803d;':'')+'">'+frLabel+'</td>'+
-        '<td class="'+statusClass+'">'+escapeHtml(statusLabel)+'</td>'+
-      '</tr>';
-    });
-    h+='</tbody></table>';
-    box.innerHTML=h;
-    box.style.display='block';
-  }).withFailureHandler(function(e){
-    if(msg)msg.textContent='Gagal memuat Food Planner: '+escapeHtml(getErrorMessage(e));
-  }).getFoodPlannerWeb({});
+    const d=document.getElementById('foodPlannerDateLabel'); if(d)d.textContent='Tanggal proses: '+(r.tanggal||'-')+' | Kebutuhan: '+(r.needDate||'-');
+    const s=document.getElementById('foodPlannerSourceLabel'); if(s)s.textContent='Sumber FR hari yang sama minggu sebelumnya: '+(r.sourceDate||'-');
+    if(msg){msg.textContent=r.message||'';msg.style.display=r.rows&&r.rows.length?'none':'block';}
+    if(!box)return; const rows=r.rows||[]; if(!rows.length){box.style.display='none';return;}
+    let h='<table class="web-table"><thead><tr><th>KODE</th><th>NAMA ITEM</th><th>SATUAN</th><th>MASUK</th><th>KIRIM</th><th>SALES</th><th>WASTE</th><th>IDEAL</th><th>AKHIR</th><th>OH FISIK</th><th>TOTAL STOK</th><th>FR</th><th>STATUS STOK</th></tr></thead><tbody>';
+    function fpNum(v){return v===null||v===undefined||v===''?'-':formatNumber(v);}
+    rows.forEach(function(x){h+='<tr><td>'+escapeHtml(x.kode)+'</td><td>'+escapeHtml(x.nama)+'</td><td>'+escapeHtml(x.satuan)+'</td><td class="num">'+fpNum(x.masuk)+'</td><td class="num">'+fpNum(x.kirim)+'</td><td class="num">'+fpNum(x.sales)+'</td><td class="num">'+fpNum(x.waste)+'</td><td class="num">'+fpNum(x.ideal)+'</td><td class="num">'+fpNum(x.akhir)+'</td><td class="num">'+fpNum(x.ohFisik)+'</td><td class="num">'+fpNum(x.totalStok)+'</td><td class="num"><strong>'+fpNum(x.fr)+'</strong></td><td>'+escapeHtml(x.statusStok||'')+'</td></tr>';});
+    h+='</tbody></table>';box.innerHTML=h;box.style.display='block';
+  }).withFailureHandler(function(e){if(msg)msg.textContent='Gagal memuat Food Planner: '+escapeHtml(getErrorMessage(e));}).getFoodPlannerWeb({});
 }
 
 function initStockMentengV520(){
